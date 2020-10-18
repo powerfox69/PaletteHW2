@@ -20,7 +20,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Slaider red
+//        Label
+        mainLabel.layer.cornerRadius = 10
+        
+// Slaider red
         redSlider.value = 0
         redSlider.maximumValue = 1
         redSlider.minimumValue = 0
@@ -41,9 +44,9 @@ class ViewController: UIViewController {
 
     func changeColor() {
         mainLabel.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlaider.value), alpha: 1)
-        redNumber.text = String(redSlider.value)
-        greenNumber.text = String(greenSlider.value)
-        blueNumber.text = String(blueSlaider.value)
+        redNumber.text = String(round(100 * redSlider.value) / 100)
+        greenNumber.text = String(round(100 * greenSlider.value) / 100)
+        blueNumber.text = String(round(100 * blueSlaider.value) / 100)
     }
     
     @IBAction func rgbSliderAction() {
